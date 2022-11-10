@@ -6,7 +6,7 @@
 /*   By: kdoulyaz <kdoulyaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:42:46 by kdoulyaz          #+#    #+#             */
-/*   Updated: 2022/11/09 15:28:21 by kdoulyaz         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:41:18 by kdoulyaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include<iostream>
 #include<string>
 #include<random>
+#include <iomanip>
 
 class Contact{
     private:
@@ -35,6 +36,7 @@ class Contact{
         std::string	get_nickname();
         std::string	get_phone_number();
         std::string	get_darkest_secret();
+		void	print_contact(int);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kdoulyaz <kdoulyaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:24:29 by kdoulyaz          #+#    #+#             */
-/*   Updated: 2022/11/09 16:00:12 by kdoulyaz         ###   ########.fr       */
+/*   Updated: 2022/11/10 00:59:40 by kdoulyaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ PhoneBook::PhoneBook()
 PhoneBook::~PhoneBook()
 {
 }
-
 
 void		Contact::set_first_name(std::string f_name)
 {
@@ -109,13 +108,48 @@ void PhoneBook::add_contact()
 	this->index++;
 }
 
+void	Contact::print_contact(int index)
+{
+	for (int i = 0; i < index; i++){
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << i + 1;
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << contacts[i].get_first_name();
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << coget_last_name();
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << get_nickname();
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << get_phone_number();
+		std::cout << "|" << std::endl;
+	}
+}
+
 void	PhoneBook::search_contact()
 {
-	printf("oui\n");
+	Contact contact;
+	if (this->index == 0)
+    	std::cout << "empy contact" << std::endl;
+	else
+	{
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << "index";
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << "first_name";
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << "last_name";
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << "nickname";
+		std::cout << "|";
+		std::cout <<std::setfill(' ') << std::setw(10) << "Phone_num";
+		std::cout << "|" << std::endl;
+		contact.print_contact(this->index);
+	}
 	return ;
 }
 
-int main () {
+int main ()
+{
 	PhoneBook	phonebook;
 	std::string	input;
 
